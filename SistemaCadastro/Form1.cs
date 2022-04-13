@@ -54,21 +54,21 @@ namespace SistemaCadastro
 
             if(TxtNome.Text == "")
             {
-                MessageBox.Show("Preencha o campo nome!");
+                MessageBox.Show("Preencha o campo nome!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TxtNome.Focus();
                 return;
             }
 
             if (TxtTelefone.Text == "(  )      -")
             {
-                MessageBox.Show("Preencha o campo telefone!");
+                MessageBox.Show("Preencha o campo telefone!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 TxtTelefone.Focus();
                 return;
             }
 
             if (ComboCivil.Items.Contains(ComboCivil.Text) == false)
             {
-                MessageBox.Show("Escolha uma das opções cadastradas!");
+                MessageBox.Show("Escolha uma das opções cadastradas!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ComboCivil.Focus();
                 return;
             }
@@ -87,7 +87,7 @@ namespace SistemaCadastro
             }
             else
             {
-                MessageBox.Show("Informe qual o seu sexo!");
+                MessageBox.Show("Informe qual o seu sexo!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 GrupoSexo.Focus();
                 return;
             }
@@ -112,14 +112,14 @@ namespace SistemaCadastro
             
             BtnLimpar_Click(BtnLimpar, EventArgs.Empty);
             Listar();
-            MessageBox.Show("Cadastro efetuado com sucesso!");
+            MessageBox.Show("Cadastro efetuado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             int indice = Lista.SelectedIndex;
             pessoas.RemoveAt(indice);
-            MessageBox.Show("Cadastro excluído com sucesso!");
+            MessageBox.Show("Cadastro excluído com sucesso!","Informação",MessageBoxButtons.OK, MessageBoxIcon.Information);
             Listar();
         }
 
